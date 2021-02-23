@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_flutter_components/components/select/index.dart';
+import 'package:my_flutter_components/components/select/select-controller.dart';
 import 'package:my_flutter_components/components/select/select-item.dart';
 
 void main() {
@@ -34,6 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
     {'value': '选项5', 'label': '北京烤鸭'},
   ];
   GlobalKey _globalKey = GlobalKey();
+  final selectController = SelectController();
 
   @override
   Widget build(BuildContext context) {
@@ -47,6 +49,7 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
+            Text('${selectController.count}'),
             QlSelect(
               children: [
                 ...List.generate(
